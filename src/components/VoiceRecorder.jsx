@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand,} from "@aws-sdk/client-s3";
 import Summary from './summary';
 
-const apiUrl = "https://07x4swesbl.execute-api.eu-central-1.amazonaws.com";
+const apiUrl = "https://tvjo5yjdd5.execute-api.eu-central-1.amazonaws.com";
 const region = 'eu-central-1';
 
 const s3Client = new S3Client({ region });
