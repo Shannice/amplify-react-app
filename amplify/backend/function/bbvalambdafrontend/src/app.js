@@ -1,5 +1,4 @@
 const AWS = require('aws-sdk');
-const s3 = new AWS.S3();
 const express = require('express');
 const bodyParser = require('body-parser');
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
@@ -10,15 +9,15 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "*")
-  next()
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
 });
 
 const bucketName = 'aws-conversation-agent-data-frankfurt';
 
 // Generate pre-signed URL for upload
-app.get('/upload', async (req, res) => {
+app.get('/upload-url', async (req, res) => {
   const objectKey = `recordings/${Date.now()}.webm`;
   const expirationTime = 3600; // 1 hour
 
@@ -40,7 +39,7 @@ app.get('/upload', async (req, res) => {
 });
 
 // List objects in the bucket
-app.get('/list', async (req, res) => {
+app.get('/list-summaries', async (req, res) => {
   const params = {
     Bucket: bucketName,
     Prefix: 'aca_summary/',
@@ -56,7 +55,7 @@ app.get('/list', async (req, res) => {
 });
 
 // Get object content
-app.get('/read/:key', async (req, res) => {
+app.get('/read-summary/:key', async (req, res) => {
   const params = {
     Bucket: bucketName,
     Key: `aca_summary/${req.params.key}`,
@@ -72,7 +71,7 @@ app.get('/read/:key', async (req, res) => {
 });
 
 app.listen(3000, function() {
-  console.log("App started")
+  console.log("App started");
 });
 
 module.exports = app;
