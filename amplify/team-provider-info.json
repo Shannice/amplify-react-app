@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bbvaproject-dev-4461a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::350080658121:role/amplify-bbvaproject-dev-4461a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::350080658121:role/amplify-bbvaproject-dev-4461a-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-bbvaproject-dev-4461a-deployment",
+      "UnauthRoleName": "amplify-bbvaproject-dev-4461a-unauthRole",
+      "StackName": "amplify-bbvaproject-dev-4461a",
+      "StackId": "arn:aws:cloudformation:eu-central-1:350080658121:stack/amplify-bbvaproject-dev-4461a/aee7b250-4823-11ef-b701-0257b97cb813",
+      "AmplifyAppId": "d190y2jscpmodg"
+    },
+    "categories": {
+      "auth": {
+        "bbvaprojectf6cd23e5": {}
+      },
+      "function": {
+        "bbvalambdafrontend": {
+          "deploymentBucketName": "amplify-bbvaproject-dev-4461a-deployment",
+          "s3Key": "amplify-builds/bbvalambdafrontend-3931726e54362b34506c-build.zip"
+        }
+      },
+      "api": {
+        "bbvaapi2": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
