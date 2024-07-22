@@ -60,10 +60,8 @@ export const VoiceRecorder = () => {
     if (!audioBlob) return;
 
     try {
-      // Get pre-signed URL from our API
       const { data: { uploadURL, objectKey } } = await axios.get(`${apiUrl}/upload-url`);
 
-      // Use S3 SDK to upload the file
       const command = new PutObjectCommand({
         Bucket: 'aws-conversation-agent-data-frankfurt',
         Key: objectKey,
