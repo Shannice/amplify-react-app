@@ -1,7 +1,10 @@
 const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
 const express = require('express');
 const bodyParser = require('body-parser');
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
+
+
 
 const app = express();
 app.use(bodyParser.json());
